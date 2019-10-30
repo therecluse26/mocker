@@ -8,4 +8,4 @@ Usage - two options
 	`fortune | mocker`
 
 2) Feed it with an -i flag
-	`mocker -i "stop mocking me, man!"
+	`mocker -i "stop mocking me, man!"`
