@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io"
 	"math/rand"
 	"os"
 	"time"
@@ -23,14 +22,11 @@ func main() {
 		panic(err)
 	}
 	if (fi.Mode() & os.ModeCharDevice) == 0 {
-		reader := bufio.NewReader(os.Stdin)
-		for {
-			input, err := reader.ReadString(' ')
-			if err != nil && err == io.EOF {
-				break
-			}
-			inputString += input
+		scanner := bufio.NewScanner(os.Stdin)
+		for scanner.Scan() {
+			inputString += scanner.Text()
 		}
+
 		flag.Parse()
 	// Otherwise, parses inputString flag
 
