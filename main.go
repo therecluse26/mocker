@@ -69,6 +69,5 @@ func main() {
 		fmt.Println(string(newString))
 	}
 
-
 	os.Exit(1)
 }
